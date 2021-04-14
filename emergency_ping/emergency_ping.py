@@ -7,7 +7,7 @@ from discord.ext.commands import bot
 
 import discord
 from discord.ext import commands
-class fun(commands.Cog):
+class em(commands.Cog):
     def __init__ (self, bot):
         self.bot = bot
 
@@ -29,4 +29,4 @@ class fun(commands.Cog):
             await message.send("*Please mention the reason*")
         
 def setup(bot):
-    bot.add_cog(fun(bot))
+    bot.add_cog(em(bot))
