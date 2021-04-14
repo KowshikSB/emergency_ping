@@ -24,9 +24,9 @@ class em(commands.Cog):
             guild=self.get_guild(799526257506254868)
             await reason.message.add_reaction("<:emergency_ping:831873364087537664>")
             x="<@&825260273010081794>"
-            await ctx.channel.send(x,embed=em)
+            await reason.channel.send(x,embed=em)
         else:
-            await ctx.channnel.send("*Please mention the reason*")
+            await reason.channnel.send("*Please mention the reason*")
         
 def setup(bot):
     bot.add_cog(em(bot))
