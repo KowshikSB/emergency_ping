@@ -15,7 +15,7 @@ class em(commands.Cog):
     @commands.command()
     async def emergency(self,ctx,*,reason=None):
         if reason is not None:
-            em=discord.Embed(title ="Emergency Situation", colour=0x2f3136,timestamp=reason.created_at)
+            em=discord.Embed(title ="Emergency Situation", colour=0x2f3136,timestamp=reason.message.created_at)
             
             icon=self.guild.icon_url
             em.set_thumbnail(url=icon)
