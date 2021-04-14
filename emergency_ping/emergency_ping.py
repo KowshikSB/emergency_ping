@@ -20,12 +20,12 @@ class em(commands.Cog):
             icon=ctx.guild.icon_url
             em.set_thumbnail(url=icon)
             em.add_field(name="Reason:",value=f"```{reason}```",inline=False)
-            em.add_field(name="Triggered by:",value=f"<@{reason.author.id}>",inline=True)
+            em.add_field(name="Triggered by:",value=f"<@{ctx.author.id}>",inline=True)
             
             
             ch=ctx.message.channel.id
             channel=ctx.guild.get_channel(ctx)
-            await reason.message.add_reaction("<:emergency_ping:831873364087537664>")
+            await ctx.message.add_reaction("<:emergency_ping:831873364087537664>")
             x="<@&825260273010081794>"
             await channel.send(x,embed=em)
         else:
