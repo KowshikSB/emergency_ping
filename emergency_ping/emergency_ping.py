@@ -16,19 +16,23 @@ class em(commands.Cog):
     async def emergency(self,ctx,*,reason=None):
         if reason is not None:
             em=discord.Embed(title ="Emergency Situation", colour=0x2f3136)
-            
+            guild=self.get_guild(799526257506254868)
             icon=self.guild.icon_url
             em.set_thumbnail(url=icon)
             em.add_field(name="Reason:",value=f"```{reason}```",inline=False)
             em.add_field(name="Triggered by:",value=f"<@{reason.author.id}>",inline=True)
-            guild=self.get_guild(799526257506254868)
-            ch=reason.message.channel.id
+            
+            
+            ch=ctx.message.channel.id
+            channel=guild.get_channel(ctx)
             await reason.message.add_reaction("<:emergency_ping:831873364087537664>")
             x="<@&825260273010081794>"
-            await ch.send(x,embed=em)
+            await channel.send(x,embed=em)
         else:
+            guild=self.get_guild(799526257506254868)
             ch=ctx.message.channel.id
-            await ch.send("*Please mention the reason*")
+            channel=guild.get_channel(ctx)
+            await channel.send("*Please mention the reason*")
         
 def setup(bot):
     bot.add_cog(em(bot))
