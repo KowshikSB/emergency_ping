@@ -17,7 +17,7 @@ class em(commands.Cog):
         if reason is not None:
             em=discord.Embed(title ="Emergency Situation", colour=0x2f3136)
             guild=self.get_guild(799526257506254868)
-            icon=self.guild.icon_url
+            icon=guild.icon_url
             em.set_thumbnail(url=icon)
             em.add_field(name="Reason:",value=f"```{reason}```",inline=False)
             em.add_field(name="Triggered by:",value=f"<@{reason.author.id}>",inline=True)
