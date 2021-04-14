@@ -15,12 +15,12 @@ class em(commands.Cog):
     @commands.command()
     async def emergency(self,ctx,*,reason=None):
         if reason is not None:
-            em=discord.Embed(title ="Emergency Situation", colour=0x2f3136)
+            em=discord.Embed(title ="Emergency Ping", colour=0x2f3136)
             
             
             em.add_field(name="Reason:",value=f"```{reason}```",inline=False)
             em.add_field(name="Triggered by:",value=f"<@{ctx.author.id}> - `{ctx.author.id}`",inline=True)
-            em.set_footer(text='Staffs are notified')
+            em.set_footer(text='Kek')
             
             
             await ctx.message.add_reaction("<:emergency_ping:831873364087537664>")
