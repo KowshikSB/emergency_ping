@@ -17,11 +17,10 @@ class em(commands.Cog):
         if reason is not None:
             em=discord.Embed(title ="Emergency Situation", colour=0x2f3136)
             
-            icon=ctx.guild.icon_url
-            em.set_thumbnail(url=icon)
-            em.add_field(name="Reason:",value=f"```{reason}```",inline=False)
-            em.add_field(name="Triggered by:",value=f"<@{ctx.author.id}>",inline=True)
             
+            em.add_field(name="Reason:",value=f"```{reason}```",inline=False)
+            em.add_field(name="Triggered by:",value=f"<@{ctx.author.id}> - `{ctx.author.id}`",inline=True)
+            em.set_footer(text='Staffs are notified')
             
             
             await ctx.message.add_reaction("<:emergency_ping:831873364087537664>")
