@@ -13,7 +13,7 @@ class em(commands.Cog):
 
     
     @commands.command()
-    async def emergency(self,*,reason=None):
+    async def emergency(self,ctx,*,reason=None):
         if reason is not None:
             em=discord.Embed(title ="Emergency Situation", colour=0x2f3136,timestamp=reason.created_at)
             
@@ -24,9 +24,9 @@ class em(commands.Cog):
             guild=self.get_guild(799526257506254868)
             await reason.message.add_reaction("<:emergency_ping:831873364087537664>")
             x="<@&825260273010081794>"
-            await reason.channel.send(x,embed=em)
+            await ctx.channel.send(x,embed=em)
         else:
-            await reason.channnel.send("*Please mention the reason*")
+            await ctx.channnel.send("*Please mention the reason*")
         
 def setup(bot):
     bot.add_cog(em(bot))
