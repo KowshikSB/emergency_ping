@@ -23,16 +23,14 @@ class em(commands.Cog):
             em.add_field(name="Triggered by:",value=f"<@{ctx.author.id}>",inline=True)
             
             
-            ch=ctx.channel.id
-            channel=ctx.guild.get_channel(ctx)
+            
             await ctx.message.add_reaction("<:emergency_ping:831873364087537664>")
             x="<@&825260273010081794>"
-            await channel.send(x,embed=em)
+            await ctx.channel.send(x,embed=em)
         else:
             
-            ch=ctx.channel.id
-            channel=ctx.guild.get_channel(ctx)
-            await channel.send("*Please mention the reason*")
+            
+            await ctx.channel.send("*Please mention the reason*")
         
 def setup(bot):
     bot.add_cog(em(bot))
