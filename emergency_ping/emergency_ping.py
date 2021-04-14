@@ -15,7 +15,7 @@ class em(commands.Cog):
     @commands.command()
     async def emergency(self,ctx,*,reason=None):
         if reason is not None:
-            em=discord.Embed(title ="Emergency Situation", colour=0x2f3136,timestamp=ctx.created_at)
+            em=discord.Embed(title ="Emergency Situation", colour=0x2f3136)
             
             icon=self.guild.icon_url
             em.set_thumbnail(url=icon)
@@ -27,7 +27,7 @@ class em(commands.Cog):
             x="<@&825260273010081794>"
             await ch.send(x,embed=em)
         else:
-            ch=reason.message.channel.id
+            ch=ctx.message.channel.id
             await ch.send("*Please mention the reason*")
         
 def setup(bot):
