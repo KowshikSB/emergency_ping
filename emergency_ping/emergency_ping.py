@@ -25,11 +25,11 @@ class em(commands.Cog):
             
             await ctx.message.add_reaction("<:emergency_ping:831873364087537664>")
             x="<@&825260273010081794>"
-            await ctx.channel.send(x,embed=em)
+            await ctx.reply(x,embed=em)
         else:
             
             
-            await ctx.channel.send("*Please mention the reason*")
+            await ctx.reply("*Please mention the reason*")
         
 def setup(bot):
     bot.add_cog(em(bot))
